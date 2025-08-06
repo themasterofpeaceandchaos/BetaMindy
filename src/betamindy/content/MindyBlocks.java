@@ -592,11 +592,11 @@ public class MindyBlocks{
         }};
 
         spectrum = new ItemTurret("spectrum"){{
-            requirements(Category.turret, with(Items.copper, 30, MindyItems.scalarRaw, 35, Items.silicon, 8));
+            requirements(Category.turret, with(Items.copper, 30));
 
             range = 130f; //must be set before ammo()
             ammo(
-                    Items.copper, new ItemTrailBulletType(6, 4.5f, range, FireColor.fromMap.get(Items.copper)),
+                    Items.copper, new ItemTrailBulletType(100, 4.5f, range, FireColor.fromMap.get(Items.copper)),
                     MindyItems.scalarRaw, new ItemTrailBulletType(9, 4f, range, Pal2.deepRed),
                     Items.titanium, new ItemTrailBulletType(20, 7f, range, Color.cyan){{
                         pierceCap = 4;
@@ -1499,10 +1499,8 @@ public class MindyBlocks{
 
         drillMini = new DrillTurret("drill-mini"){{
             range = 50f;
-            itemCapacity = 25;
-            hasPower = true;
-            consumePower(1f);
-            requirements(Category.production, with(Items.copper, 30, Items.graphite, 25, Items.titanium, 10, Items.silicon, 15));
+            itemCapacity = 50;
+            requirements(Category.production, with(Items.copper, 30));
         }};
 
         drillMega = new DrillTurret("drill-mega"){{
